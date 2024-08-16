@@ -1,0 +1,18 @@
+<div>
+  <h1>Task Manager</h1>
+  <input [(ngModel)]="tituloTarea" placeholder="Ingresar titulo tarea" />
+  <button (click)="agregarTarea()">Agregar tarea</button>
+  <button (click)="mostrarTareas()">listar en consola</button>
+</div>
+<div>
+  <ul *ngFor="let item of taskManager.tasks">
+    <li>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.id }}</p>
+      <p>{{ item.completed }}</p>
+      <button (click)="taskManager.marcarTareaCompletada(item.id)">
+        completada
+      </button>
+    </li>
+  </ul>
+</div>
